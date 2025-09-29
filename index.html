@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
   <head>
     <meta charset="UTF-8">
-    <title>Ett Bättre Helsingborg - Web Application</title>
+    <title>Vårt Landskrona - Web Application</title>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <script src="dist/app.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all">
     <link rel="stylesheet" type="text/css" href="assets/css/theme.css" media="all">
-    <link rel="stylesheet" type="text/css" href="assets/css/animations.css" media="all">  
+    <link rel="stylesheet" type="text/css" href="assets/css/animations.css" media="all">
     <script>
       (() => {
         const acceptedDomains   = ['lime-forms.com', 'lime-forms.se'];
         const customer          = new URLSearchParams(location.search).get("customer")?.replace(/[^\w\.\-]/g, "") || "helsingborgs-stad-sbf.lime-forms.se";
         const topDomain         = customer.split('.').slice(-2).join('.');
         const shouldLoadScript  = acceptedDomains.includes(topDomain)
-        
+
         if (!shouldLoadScript) {
           console.error(`Invalid domain: ${topDomain}. Please use one of the following domains: ${acceptedDomains.join(', ')}.`);
-          return; 
+          return;
         } else {
           document.head.appendChild(Object.assign(document.createElement("script"), {
             src: `https://${customer}/js/ce/latest`,
@@ -34,7 +34,7 @@
     <div id="header" class="hidden-app">
       <div id="app-banner" class="c-notice u-display--none" aria-hidden="true">
         <span class="c-notice__text">
-          Ladda ner Ett Bättre Helsingborg till mobilen.
+          Ladda ner Vårt Landskrona till mobilen.
         </span>
         <a id="app-banner-link" class="c-button c-button__filled c-button__filled--primary" target="_top" type="button" href="#getapp" aria-label="Hämta app">
           <span class="c-button__label">
@@ -44,7 +44,7 @@
       </div>
 
       <div id="toolbar" class="c-toolbar hidden-app">
-        
+
         <!-- Cancel button-->
         <a id="cancel-button" class="c-button c-button__filled c-button__filled--primary" target="_top" type="button" href="#cancel" aria-label="Avbryt">
           <span class="c-button__label">

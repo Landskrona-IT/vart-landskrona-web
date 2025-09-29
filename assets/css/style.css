@@ -21,8 +21,8 @@
 
 @font-face{
   font-display: swap;
-  font-family: "helsingborg-sans-medium";
-  src: url("../fonts/helsingborg-sans-medium.woff") format("woff");
+  font-family: "Ciutadella Medium";
+  src: url("../fonts/Ciutadella Medium.ttf") format("truetype");
 }
 
 html,
@@ -52,7 +52,7 @@ p, strong, b {
 /* Devtools */
 .step,
 .step > * {
-  /*display: block !important;*/ 
+  /*display: block !important;*/
 }
 
 .step {
@@ -82,20 +82,20 @@ p, strong, b {
   margin-bottom: 16px !important;
 }
 
-/* Headings */ 
-#simpliform .h1, 
-#simpliform .h2, 
-#simpliform .h3, 
-#simpliform .h4, 
-#simpliform .h5, 
-#simpliform .h6, 
-#simpliform h1, 
-#simpliform h2, 
-#simpliform h3, 
+/* Headings */
+#simpliform .h1,
+#simpliform .h2,
+#simpliform .h3,
+#simpliform .h4,
+#simpliform .h5,
+#simpliform .h6,
+#simpliform h1,
+#simpliform h2,
+#simpliform h3,
 #simpliform h4,
-#simpliform h5, 
+#simpliform h5,
 #simpliform h6 {
-  font-family: 'helsingborg-sans-medium', sans-serif;
+  font-family: 'Ciutadella Medium', sans-serif;
   font-weight: 700 !important;
   margin-top: 0 !important;
 }
@@ -106,7 +106,7 @@ p, strong, b {
   font-size: 32px !important
 }
 
-/* Dropzones */ 
+/* Dropzones */
 #simpliform .dropzone,
 #simpliform .form-control {
   box-shadow: none;
@@ -154,7 +154,7 @@ body #simpliform #confirmation .checkbox {
   margin-bottom: 32px;
 }
 
-#simpliform .pagination-wrapper .btn-primary, 
+#simpliform .pagination-wrapper .btn-primary,
 #simpliform .btn-success {
   border-radius: var(--c-button-border-radius,var(--radius-md,var(--base,8px)));
   font-size: .95rem;
@@ -199,7 +199,7 @@ body #simpliform #confirmation .checkbox {
   margin-left: -1ch;
 }
 
-/* Simpliforms alerts */ 
+/* Simpliforms alerts */
 #simpliform a,
 #simpliform a:hover,
 #simpliform a:active,
@@ -310,22 +310,22 @@ body #simpliform #confirmation .checkbox {
   font-weight: normal;
 }
 
-/* Column reset */ 
-#simpliform .col-lg-1, 
-#simpliform .col-lg-10, 
-#simpliform .col-lg-11, 
-#simpliform .col-lg-12, 
-#simpliform .col-lg-2, 
-#simpliform .col-lg-3, 
-#simpliform .col-lg-4, 
-#simpliform .col-lg-5, 
-#simpliform .col-lg-6, 
-#simpliform .col-lg-7, 
-#simpliform .col-lg-8, 
-#simpliform .col-lg-9, 
-#simpliform .col-md-1, 
-#simpliform .col-md-10, 
-#simpliform .col-md-11, 
+/* Column reset */
+#simpliform .col-lg-1,
+#simpliform .col-lg-10,
+#simpliform .col-lg-11,
+#simpliform .col-lg-12,
+#simpliform .col-lg-2,
+#simpliform .col-lg-3,
+#simpliform .col-lg-4,
+#simpliform .col-lg-5,
+#simpliform .col-lg-6,
+#simpliform .col-lg-7,
+#simpliform .col-lg-8,
+#simpliform .col-lg-9,
+#simpliform .col-md-1,
+#simpliform .col-md-10,
+#simpliform .col-md-11,
 #simpliform .col-md-12,
 #simpliform .col-md-2,
 #simpliform .col-md-3,
@@ -368,13 +368,13 @@ body #simpliform #confirmation .checkbox {
   margin-right: 0;
 }
 
-/* Header grid */ 
+/* Header grid */
 #header {
   display: grid;
   gap: 16px;
 }
 
-/* Get the app banner */ 
+/* Get the app banner */
 #app-banner {
   background-color: #3d3d3d;
   color: #fff;
@@ -410,7 +410,7 @@ body #simpliform #confirmation .checkbox {
   background-color: rgba(255,255,255,.2);
 }
 
-/* Toolbar */ 
+/* Toolbar */
 #toolbar {
   display: flex;
   flex-direction: row-reverse;
@@ -429,7 +429,7 @@ body #simpliform #confirmation .checkbox {
 #toolbar .c-button,
 #toolbar .c-button:active,
 #toolbar .c-button:focus,
-#toolbar .c-button:hover { 
+#toolbar .c-button:hover {
   margin-bottom: -3px;
   text-decoration: none;
   color: #000;
@@ -439,7 +439,7 @@ body #simpliform #confirmation .checkbox {
 #toolbar .c-button:after {
   content: "";
   display: block;
-  height: 3px; 
+  height: 3px;
   background-color: #76232f;
   width: 0%;
   margin-left: auto;
@@ -458,12 +458,12 @@ body #simpliform #confirmation .checkbox {
   gap: 6px;
 }
 
-/* Utilities */ 
+/* Utilities */
 .u-display--none {
   display: none !important;
 }
 
-/* Icons */ 
+/* Icons */
 .c-icon {
   width: 22px;
   height: 22px;
