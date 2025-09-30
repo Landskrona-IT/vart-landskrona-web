@@ -22,7 +22,7 @@
 @font-face{
   font-display: swap;
   font-family: "Ciutadella Medium";
-  src: url("../fonts/Ciutadella Medium.ttf") format("truetype");
+  src: url("../fonts/ciutadella/Ciutadella Medium.ttf") format("truetype");
 }
 
 html,
