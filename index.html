@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Vårt Landskrona - Web Application</title>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
@@ -10,91 +10,91 @@
     <link rel="stylesheet" type="text/css" href="assets/css/theme.css" media="all">
     <link rel="stylesheet" type="text/css" href="assets/css/animations.css" media="all">
     <script>
-      (() => {
-        const acceptedDomains   = ['lime-forms.com', 'lime-forms.se'];
-        const customer          = new URLSearchParams(location.search).get("customer")?.replace(/[^\w\.\-]/g, "") || "helsingborgs-stad-sbf.lime-forms.se";
-        const topDomain         = customer.split('.').slice(-2).join('.');
-        const shouldLoadScript  = acceptedDomains.includes(topDomain)
+        (() => {
+            const acceptedDomains   = ['lime-forms.com', 'lime-forms.se'];
+            const customer          = new URLSearchParams(location.search).get("customer")?.replace(/[^\w\.\-]/g, "") || "landskrona-kommun.lime-forms.com";
+            const topDomain         = customer.split('.').slice(-2).join('.');
+            const shouldLoadScript  = acceptedDomains.includes(topDomain)
 
-        if (!shouldLoadScript) {
-          console.error(`Invalid domain: ${topDomain}. Please use one of the following domains: ${acceptedDomains.join(', ')}.`);
-          return;
-        } else {
-          document.head.appendChild(Object.assign(document.createElement("script"), {
-            src: `https://${customer}/js/ce/latest`,
-            type: "text/javascript"
-          }));
-        }
-      })();
+            if (!shouldLoadScript) {
+                console.error(`Invalid domain: ${topDomain}. Please use one of the following domains: ${acceptedDomains.join(', ')}.`);
+                return;
+            } else {
+                document.head.appendChild(Object.assign(document.createElement("script"), {
+                    src: `https://${customer}/js/ce/latest`,
+                    type: "text/javascript"
+                }));
+            }
+        })();
     </script>
-  </head>
+</head>
 <body>
-  <div class="loader"></div>
-  <div id="app">
+<div class="loader"></div>
+<div id="app">
     <div id="header" class="hidden-app">
-      <div id="app-banner" class="c-notice u-display--none" aria-hidden="true">
+        <div id="app-banner" class="c-notice u-display--none" aria-hidden="true">
         <span class="c-notice__text">
           Ladda ner Vårt Landskrona till mobilen.
         </span>
-        <a id="app-banner-link" class="c-button c-button__filled c-button__filled--primary" target="_top" type="button" href="#getapp" aria-label="Hämta app">
+            <a id="app-banner-link" class="c-button c-button__filled c-button__filled--primary" target="_top" type="button" href="#getapp" aria-label="Hämta app">
           <span class="c-button__label">
             <span class="c-button__label-text">Hämta app</span>
           </span>
-        </a>
-      </div>
+            </a>
+        </div>
 
-      <div id="toolbar" class="c-toolbar hidden-app">
+        <div id="toolbar" class="c-toolbar hidden-app">
 
-        <!-- Cancel button-->
-        <a id="cancel-button" class="c-button c-button__filled c-button__filled--primary" target="_top" type="button" href="#cancel" aria-label="Avbryt">
+            <!-- Cancel button-->
+            <a id="cancel-button" class="c-button c-button__filled c-button__filled--primary" target="_top" type="button" href="#cancel" aria-label="Avbryt">
           <span class="c-button__label">
             <span class="c-button__icon">
               <span class="c-icon c-icon--close"></span>
             </span>
             <span class="c-button__label-text">Avbryt</span>
           </span>
-        </a>
+            </a>
 
-        <!-- Close button-->
-        <a id="close-button" class="c-button c-button__filled c-button__filled--primary u-display--none" target="_top" type="button" href="#close" aria-label="Stäng"  aria-hidden="true">
+            <!-- Close button-->
+            <a id="close-button" class="c-button c-button__filled c-button__filled--primary u-display--none" target="_top" type="button" href="#close" aria-label="Stäng"  aria-hidden="true">
           <span class="c-button__label">
             <span class="c-button__icon">
               <span class="c-icon c-icon--close"></span>
             </span>
             <span class="c-button__label-text">Stäng</span>
           </span>
-        </a>
+            </a>
 
-        <!-- Back button -->
-        <a id="back-button" class="c-button c-button__filled c-button__filled--primary u-display--none" target="_top" type="button" href="#back" aria-label="Gå till förgående" aria-hidden="true">
+            <!-- Back button -->
+            <a id="back-button" class="c-button c-button__filled c-button__filled--primary u-display--none" target="_top" type="button" href="#back" aria-label="Gå till förgående" aria-hidden="true">
           <span class="c-button__label">
             <span class="c-button__icon">
               <span class="c-icon c-icon--back"></span>
             </span>
             <span class="c-button__label-text">Tillbaka</span>
           </span>
-        </a>
+            </a>
 
-      </div>
+        </div>
     </div>
 
     <!-- Template for injecting app / web specic forms. File: device.js-->
     <template id="lime-form-template">
-      <lime-form id="lime-form" form-id=""></lime-form>
+        <lime-form id="lime-form" form-id=""></lime-form>
     </template>
 
-  </div>
+</div>
 
-  <script>
+<script>
     document.querySelector("html, body").style.height = "auto";
     const sendMessageToParent = () => {
-      window.parent.postMessage({
-        height: document.body.clientHeight
-      }, '*');
+        window.parent.postMessage({
+            height: document.body.clientHeight
+        }, '*');
     };sendMessageToParent();
     new ResizeObserver(() => {
-      sendMessageToParent();
+        sendMessageToParent();
     }).observe(document.body);
-  </script>
+</script>
 </body>
 </html>
