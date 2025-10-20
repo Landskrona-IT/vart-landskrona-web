@@ -21,16 +21,16 @@
 
 @font-face{
   font-display: swap;
-  font-family: "Ciutadella Medium";
-  src: url("../fonts/ciutadella/Ciutadella Medium.ttf") format("truetype");
+  font-family: "Arial Medium";
+  src: url("../fonts/arial/Arial Medium.ttf") format("truetype");
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: transparent;
-  font-family: 'Roboto', sans-serif;
+  background-color: #D9F0F4;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 body.is-app .hidden-app {
@@ -48,6 +48,16 @@ body.is-app #app {
 p, strong, b {
   font-family: 'Roboto', sans-serif;
 }
+
+select {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC) !important;
+    background-position: 100% !important;
+    background-repeat: no-repeat !important;
+}
+
 
 /* Devtools */
 .step,
@@ -95,15 +105,16 @@ p, strong, b {
 #simpliform h4,
 #simpliform h5,
 #simpliform h6 {
-  font-family: 'Ciutadella Medium', sans-serif;
-  font-weight: 700 !important;
+  font-family: 'Arial Regular', sans-serif !important;
+  font-weight: 500 !important;
   margin-top: 0 !important;
 }
 
-#simpliform .step-title h3,
+#simpliform  h3,
 #simpliform #confirmation h1.h4 {
-  color: #76232f !important;
-  font-size: 32px !important
+  color: #004E68 !important;
+  font-size: 32px !important;
+   margin-bottom: 1rem !important;
 }
 
 /* Dropzones */
@@ -111,8 +122,8 @@ p, strong, b {
 #simpliform .form-control {
   box-shadow: none;
   border-radius: calc(var(--base, 8px)*var(--c-field-border-radius, .25));
-  border: 1px solid #a3a3a3;
-  background: #f5f5f5;
+  border: 1px solid #d5d5d5 !important;
+  background: white !important;
 }
 
 #simpliform .form-control {
@@ -153,6 +164,21 @@ body #simpliform #confirmation .checkbox {
   border: none;
   margin-bottom: 32px;
 }
+#simpliform .next-btn-wrapper {
+    width: 100% !important;
+    max-width: 266px !important;
+    margin: 0 auto !important;
+}
+
+#simpliform .btn-primary, .btn-success {
+    background: #0e5873 !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+    max-width: 266px !important;
+    color: white !important;
+    font-size: 1.125rem !important;
+    font-weight: 500 !important;
+ }
 
 #simpliform .pagination-wrapper .btn-primary,
 #simpliform .btn-success {
@@ -215,10 +241,6 @@ body #simpliform #confirmation .checkbox {
   gap: 16px;
   border-radius: 4px;
   border: none;
-  box-shadow:
-  0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
-  0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-  0px 10px 80px rgba(0, 0, 0, 0.07);
 }
 
 #simpliform .alert ul {
@@ -226,8 +248,8 @@ body #simpliform #confirmation .checkbox {
 }
 
 #simpliform .alert.alert-info {
-  background-color: #DCF4FE;
-  color: #000;
+  background-color: #F7F4F3 !important;
+  color: #004E68 !important;
 }
 
 #simpliform .alert.alert-info a.alert-link {
@@ -479,4 +501,35 @@ body #simpliform #confirmation .checkbox {
 
 .c-icon.c-icon--close {
   background-image: url(../icons/close.svg);
+}
+
+[data-vv-id="39"] {
+    margin-left: 1rem !important;
+}
+
+/* Ärendekategorier select div wrapper */
+[module-uuid="6f18d473-a679-4c30-98ae-298a815e1a67"] {
+    margin-bottom: 3rem !important;
+}
+
+[module-uuid="6f18d473-a679-4c30-98ae-298a815e1a67"] label {
+    display: none !important;
+}
+
+/*p tag in final step */
+[module-uuid="7cdc524d-d369-4393-a42e-ecb29d8482eb"] p {
+    margin-bottom: 1rem !important;
+}
+
+/* cards in confirm details step */
+[module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] div {
+    background: #F7F4F3 !important;
+    border: 0 solid transparent !important;
+    padding: 15px !important;
+    color: #222 !important;
+}
+
+/* "Så behandlar vi dina personuppgifter" */
+[module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] {
+    margin-bottom: 1rem !important;
 }

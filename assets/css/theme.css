@@ -52,19 +52,19 @@
   --color-lightest:#fcfcfc;
   --color-white:#ffffff;
   font-weight:500;
-  --font-family-heading:Ciutadella Medium;
+  --font-family-heading:Arial Medium;
   --font-family-bold:Roboto;
   --font-family-italic:Roboto;
   --h1-font-size:3rem;
-  --h1-font-family:Ciutadella Medium;
+  --h1-font-family:Arial Medium;
   --h2-font-size:1.375rem;
-  --h2-font-family:Ciutadella Medium;
+  --h2-font-family:Arial Medium;
   --h3-font-size:1.25rem;
-  --h3-font-family:Ciutadella Medium;
+  --h3-font-family:Arial Medium;
   --h4-font-size:1.125rem;
-  --h4-font-family:Ciutadella Medium;
-  --h5-font-family:Ciutadella Medium;
-  --h6-font-family:Ciutadella Medium;
+  --h4-font-family:Arial Medium;
+  --h5-font-family:Arial Medium;
+  --h6-font-family:Arial Medium;
   --lead-font-family:Roboto;
   --lead-font-size:1.125rem;
   --lead-line-height:1.625;
@@ -119,7 +119,7 @@
   --container-width:1440px;
 }
 .c-brand .c-brand__text{
-  font-family:Ciutadella Medium;
+  font-family:Arial Medium;
 }
 .s-nav-sidebar{
   --c-nav-v-color-contrasting:#000000;

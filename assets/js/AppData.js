@@ -9,8 +9,8 @@ const AppData = {
     noLink: "#nolink",
   },
   formIds: {
-    app: formIdAppParam || "vEKRiB3le1BSsgo18HW2",
-    web: formIdWebParam || "U3X0lhXaQ4B2dBs2rk5K",
+    app: formIdAppParam || "DI6su97z1SAALJXZBxYA",
+    web: formIdWebParam || "DI6su97z1SAALJXZBxYA",
   },
 };
 
