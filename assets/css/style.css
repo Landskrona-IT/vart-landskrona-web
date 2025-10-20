@@ -114,7 +114,7 @@ select {
 #simpliform #confirmation h1.h4 {
   color: #004E68 !important;
   font-size: 32px !important;
-   margin-bottom: 1rem !important;
+   margin-bottom: 1.5rem !important;
 }
 
 /* Dropzones */
@@ -503,17 +503,13 @@ body #simpliform #confirmation .checkbox {
   background-image: url(../icons/close.svg);
 }
 
-[data-vv-id="39"] {
-    margin-left: 1rem !important;
+/* input fields in contact information step */
+[module-uuid="7cdc524d-d369-4393-a42e-ecb29d8482eb"] .form-field {
+    padding: 0 !important;
 }
 
 /* Ärendekategorier select div wrapper */
-[module-uuid="6f18d473-a679-4c30-98ae-298a815e1a67"] {
-    margin-bottom: 3rem !important;
-}
-
-[module-uuid="6f18d473-a679-4c30-98ae-298a815e1a67"] label {
-    display: none !important;
+[module-uuid="6f18d473-a679-4c30-98ae-298a815e1a67"] select {
 }
 
 /*p tag in final step */
