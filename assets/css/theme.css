@@ -3,16 +3,16 @@
 }
 
 :root{
-  --c-header-brand-color:#76232f;
+  --c-header-brand-color:#134F63;
 }
 :root{
-  --color-primary:#76232f;
-  --color-primary-dark:#76232f;
-  --color-primary-light:#76232f;
+  --color-primary:#134F63;
+  --color-primary-dark:#134F63;
+  --color-primary-light:#134F63;
   --color-secondary:#fbccd8;
   --color-secondary-dark:#e9b7c5;
   --color-secondary-light:#fddde5;
-  --color-secondary-contrasting:#76232f;
+  --color-secondary-contrasting:#134F63;
   --color-background:#fff8fa;
   --color-background-complementary:#ffffff;
   --color-border-card:#f8dfe5;
@@ -21,7 +21,7 @@
   --text-disabled:#000000;
   --color-border-divider:#f8dfe5;
   --color-border-outline:#f8dfe5;
-  --color-border-input:#76232f;
+  --color-border-input:#134F63;
   --color-link-visited:#035297;
   --color-link-visited-hover:#298ee6;
   --color-alpha:rgba(0, 0, 0, 0.42);
@@ -29,9 +29,9 @@
   --color-success-dark:#91d736;
   --color-success-light:#91d736;
   --color-success-contrasting:#000000;
-  --color-danger:#d73740;
-  --color-danger-dark:#d73740;
-  --color-danger-light:#d73740;
+  --color-danger:#FCE0DE;
+  --color-danger-dark:#FCE0DE;
+  --color-danger-light:#FCE0DE;
   --color-danger-contrasting:#ffffff;
   --color-warning:#efbb21;
   --color-warning-dark:#efbb21;
@@ -93,7 +93,7 @@
   --c-brand-font-size:2.5rem;
   --c-button-primary-color-contrasting:#ffffff;
   --c-button-secondary-color:#fabbcb;
-  --c-button-secondary-color-contrasting:#76232f;
+  --c-button-secondary-color-contrasting:#134F63;
   --c-slider-gap:6;
   --c-slider-padding:9;
   --c-slider-item-font-size-base:16px;
@@ -114,7 +114,7 @@
   --c-footer-subfooter-alignment:center;
   --c-divider-thickness:4px;
   --c-divider-color-divider:#f8dfe5;
-  --c-divider-color-text:#6c2930;
+  --c-divider-color-text:#134F63;
   --container-width-content:760px;
   --container-width:1440px;
 }
@@ -141,9 +141,9 @@
   --c-nav-v-color-contrasting-active:#ffffff;
 }
 .s-nav-primary{
-  --c-nav-v-color-contrasting:#76232f;
-  --c-nav-h-color-contrasting:#76232f;
-  --c-nav-h-color-contrasting-active:#76232f;
+  --c-nav-v-color-contrasting:#134F63;
+  --c-nav-h-color-contrasting:#134F63;
+  --c-nav-h-color-contrasting-active:#134F63;
 }
 .s-nav-language{
   --c-nav-v-color-contrasting:#000000;
@@ -154,8 +154,8 @@
   --c-nav-v-color-contrasting-active:#000000;
 }
 .c-footer{
-  background:#76222e;
-  background-color:#76222e;
+  background:#134F63;
+  background-color:#134F63;
   background-repeat:repeat-x;
   background-position:center top;
   -webkit-background-size:contain;

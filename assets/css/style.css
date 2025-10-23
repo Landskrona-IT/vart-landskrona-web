@@ -1,36 +1,26 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-400.woff2') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-500.woff2') format('truetype');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Mona Sans';
+    font-style: normal;
+    font-weight: 100 1000;
+    font-stretch: 100%;
+    font-display: swap;
+    font-feature-settings: 'dlig' on;
+    font-variation-settings: "wdth" 90 ;
+    src: url('../fonts/mona_sans/MonaSans-VariableFont_wdth,wght.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-700.woff2') format('truetype');
-  font-weight: 700;
-  font-style: bold;
-}
-
-@font-face{
-  font-display: swap;
-  font-family: "Arial Medium";
-  src: url("../fonts/arial/Arial Medium.ttf") format("truetype");
+* {
+    font-family: "Mona Sans", sans-serif;
+    letter-spacing: .025rem;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #D9F0F4;
-  font-family: 'Roboto', sans-serif !important;
+  background-color: #F4F0E9;
+  font-family: 'Mona Sans', sans-serif !important;
 }
 
 body.is-app .hidden-app {
@@ -38,24 +28,34 @@ body.is-app .hidden-app {
 }
 
 body.is-app #app {
-  padding-top: 32px;
+  padding-top: 0px;
 }
 
 #app {
-  padding: 88px 32px 32px 32px; /* 88px for top bar */
+  padding: 3.5rem 1rem 1.5rem 1rem; /* 56px for top bar */
 }
 
-p, strong, b {
-  font-family: 'Roboto', sans-serif;
+p, strong, b, small, select {
+    font-variation-settings: "wdth" 92;
+    font-weight: 400;
+    line-height: 125%;
+    color: #4D4E4D;
+}
+
+input[type='radio'] {
+    accent-color: #134F63;
 }
 
 select {
     position: relative;
     -webkit-appearance: none;
     appearance: none;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC) !important;
-    background-position: 100% !important;
+    border: 1px solid #E1E6EF;
+    height: 2.75rem !important;
+    background-image: url("../icons/select_arrow.svg") !important;
+    background-position: calc(100% - 0.75rem) !important;
     background-repeat: no-repeat !important;
+    border-radius: 0.5rem !important;
 }
 
 
@@ -80,7 +80,7 @@ select {
 
 /* Resets */
 #simpliform .p-t-md {
-  padding-top: 16px !important;
+  padding-top: 1rem !important;
 }
 
 .pagination-wrapper, .progress, #confirmation, .alert-danger {
@@ -89,7 +89,18 @@ select {
 }
 
 #simpliform .form-group {
-  margin-bottom: 16px !important;
+  margin-bottom: 1rem !important;
+}
+
+#simpliform p {
+    font-size: 1rem;
+}
+
+#simpliform label {
+    color: #4D4E4D;
+    font-style: normal;
+    font-weight: 550 !important;
+    line-height: 125%;
 }
 
 /* Headings */
@@ -105,35 +116,64 @@ select {
 #simpliform h4,
 #simpliform h5,
 #simpliform h6 {
-  font-family: 'Arial Regular', sans-serif !important;
-  font-weight: 500 !important;
+  font-family: 'Mona Sans', sans-serif !important;
+  font-weight: 650 !important;
   margin-top: 0 !important;
+  font-variation-settings: "wdth" 86 !important;
 }
 
-#simpliform  h3,
 #simpliform #confirmation h1.h4 {
   color: #004E68 !important;
   font-size: 28px !important;
    margin-bottom: 1.5rem !important;
 }
 
+#simpliform .step-title h3, #simpliform .step h3:first-child {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100dvw;
+    margin-left: -50dvw;
+    margin-right: -50dvw;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1rem;
+    font-size: 1.75rem !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.035rem;
+    background: #6398AA;
+    color: white;
+}
+
 /* Dropzones */
 #simpliform .dropzone,
 #simpliform .form-control {
   box-shadow: none;
-  border-radius: calc(var(--base, 8px)*var(--c-field-border-radius, .25));
-  border: 1px solid #d5d5d5 !important;
-  background: white !important;
+  border-radius: 0.5rem !important;
+   border: 1px solid #E1E6EF !important;
+    color: #4D4E4D !important;
+    letter-spacing: .025rem !important;
+}
+#simpliform .form-control::placeholder {
+    color: #8C8C8C !important;
 }
 
-#simpliform .form-control {
-  height: calc(var(--c-field-height, calc(var(--base, 8px) * 6)) - var(--c-field-border-width, var(--border-width-input, 1px))*2);
+#simpliform input.form-control  {
+    height: 2.75rem !important;
+}
+
+#simpliform .label-wrap {
+    color: #4D4E4D;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 125%;
 }
 
 #simpliform .dropzone {
   min-height: initial;
   display: flex;
-  gap: 16px;
+  gap: 1rem;
+    border: 2px dashed var(--Brand-med, #6398AA) !important;
 }
 
 #simpliform .dropzone .dz-preview {
@@ -147,6 +187,19 @@ select {
   box-shadow: 0px 0.7px 5.3px rgba(0, 0, 0, 0.028), 0px 2.2px 17.9px rgba(0, 0, 0, 0.042), 0px 10px 80px rgba(0, 0, 0, 0.07);
 }
 
+#simpliform .dropzone .dz-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6398AA;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Panel */
 #simpliform .panel .panel-body,
 #simpliform .panel .panel-heading {
   padding: 0;
@@ -162,11 +215,10 @@ body #simpliform #confirmation .checkbox {
   padding: 24px;
   border-radius: 4px;
   border: none;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 #simpliform .next-btn-wrapper {
     width: 100% !important;
-    max-width: 266px !important;
     margin: 0 auto !important;
 }
 
@@ -174,7 +226,6 @@ body #simpliform #confirmation .checkbox {
     background: #0e5873 !important;
     border-radius: 1rem !important;
     width: 100% !important;
-    max-width: 266px !important;
     color: white !important;
     font-size: 1.125rem !important;
     font-weight: 500 !important;
@@ -183,18 +234,17 @@ body #simpliform #confirmation .checkbox {
 #simpliform .pagination-wrapper .btn-primary,
 #simpliform .btn-success {
   border-radius: var(--c-button-border-radius,var(--radius-md,var(--base,8px)));
-  font-size: .95rem;
-  height: calc(var(--base, 8px)*6);
+  font-size: 1.125rem !important;
   min-width: calc(var(--base, 8px)*9);
-  padding: 0 calc(var(--base, 8px)*4);
-  background-color: var(--c-button-primary-color,var(--color-primary,#ae0b05));
+  padding: 1rem 1.5rem !important;
+  background-color: var(--c-button-primary-color,var(--color-primary));
   width: 100%;
-  font-weight: bold;
+  font-weight: 600 !important;
 }
 
 #simpliform .pagination-wrapper .btn-primary:hover,
 #simpliform .btn-success:hover {
-  background-color: #922C3A !important;
+  background-color: #134F63 !important;
 }
 
 #simpliform .pagination-wrapper .btn-primary svg,
@@ -204,12 +254,27 @@ body #simpliform #confirmation .checkbox {
 
 /* Description textarea */
 #simpliform textarea.form-control {
-  min-height: 120px;
+   min-height: 120px;
+    color: #4D4E4D;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+}
+#simpliform textarea::placeholder {
+    color: #8C8C8C;
+}
+
+#simpliform .radio label {
+    color: #1D2433;
+    font-style: normal;
+    font-weight: 400 !important;
+    line-height: 125%;
 }
 
 /* Location step */
 #viewDiv {
-  margin-bottom: 16px !important;
+  margin-bottom: 1rem !important;
   height: 500px !important;
 }
 
@@ -227,10 +292,19 @@ body #simpliform #confirmation .checkbox {
 
 /* Simpliforms alerts */
 #simpliform a,
-#simpliform a:hover,
 #simpliform a:active,
 #simpliform a:visited {
-  color: inherit;
+  color: #134F63 !important;
+    font-weight: 550 !important;
+    font-size: 1rem !important;
+    text-decoration: none !important;
+}
+
+#simpliform a:hover {
+    color: #134F63 !important;
+    font-weight: 550 !important;
+    font-size: 1rem !important;
+    text-decoration: underline !important;
 }
 
 #simpliform .alert {
@@ -238,7 +312,7 @@ body #simpliform #confirmation .checkbox {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   border-radius: 4px;
   border: none;
 }
@@ -248,21 +322,36 @@ body #simpliform #confirmation .checkbox {
 }
 
 #simpliform .alert.alert-info {
-  background-color: #F7F4F3 !important;
-  color: #004E68 !important;
+    display: inline-block;
+    width: 100%;
+    background-color: white !important;
+    color: #4D4E4D !important;
+    font-weight: 400 !important;
+    font-size: 1rem !important;
 }
 
-#simpliform .alert.alert-info a.alert-link {
-  color: #000;
+#simpliform .alert.alert-info strong {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 125%;
+    color: #4D4E4D;
 }
+
+#simpliform .alert.alert-info a {
+    display: inline !important;
+    margin-top: 1rem !important;
+}
+
 
 #simpliform .alert.alert-danger {
-  background-color: #d73740;
-  color: #fff;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    color: #4D4E4D !important;
+    line-height: 125%;
 }
 
 #simpliform .alert.alert-danger a.alert-link {
-  color: #fff;
+  color: #134F63;
 }
 
 #simpliform .alert b {
@@ -299,7 +388,7 @@ body #simpliform #confirmation .checkbox {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   border-radius: 4px;
   border: none;
   box-shadow:
@@ -393,7 +482,7 @@ body #simpliform #confirmation .checkbox {
 /* Header grid */
 #header {
   display: grid;
-  gap: 16px;
+  gap: 1rem;
 }
 
 /* Get the app banner */
@@ -406,13 +495,13 @@ body #simpliform #confirmation .checkbox {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   border-radius: 4px;
   box-shadow:
   0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
   0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
   0px 10px 80px rgba(0, 0, 0, 0.07);
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 #app-banner .c-button {
@@ -439,7 +528,7 @@ body #simpliform #confirmation .checkbox {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 16px 32px;
+  padding: 1rem 2rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -462,7 +551,7 @@ body #simpliform #confirmation .checkbox {
   content: "";
   display: block;
   height: 3px;
-  background-color: #76232f;
+  background-color: #134F63;
   width: 0%;
   margin-left: auto;
   margin-right: auto;
@@ -503,29 +592,98 @@ body #simpliform #confirmation .checkbox {
   background-image: url(../icons/close.svg);
 }
 
+
+/* STEP 1 */
+#simpliform .step-1 select-dynamic-helpdesktype-field label {
+    display: none !important;
+}
+
+#simpliform .step-1 .alert.alert-info:first-child {
+    background: #D9F0F4 !important;
+}
+
+/* STEP 2 */
+
+#simpliform .step-2 [module-uuid="7a8b0885-715e-42e5-bbd5-fad49f9ea3c5"] {
+    font-size: 1rem;
+    font-weight: 700 !important;
+    color: #4D4E4D;
+}
+
+/* STEP 4 */
+
 /* input fields in contact information step */
-[module-uuid="7cdc524d-d369-4393-a42e-ecb29d8482eb"] .form-field {
+#simpliform .step-4 .form-field {
     padding: 0 !important;
 }
 
-/* Ärendekategorier select div wrapper */
-[module-uuid="6f18d473-a679-4c30-98ae-298a815e1a67"] select {
-}
-
-/*p tag in final step */
-[module-uuid="7cdc524d-d369-4393-a42e-ecb29d8482eb"] p {
-    margin-bottom: 1rem !important;
-}
+/* STEP 5 */
 
 /* cards in confirm details step */
-[module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] div {
-    background: #F7F4F3 !important;
-    border: 0 solid transparent !important;
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] > div {
+    background: white !important;
+    border: none !important;
+    box-shadow: none !important;
     padding: 15px !important;
     color: #222 !important;
 }
 
+/* card title */
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] strong {
+    color: #4D4E4D;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+}
+
+/* card details fields */
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] > div:nth-of-type(4) {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+}
+
+/* card field title */
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] > div:nth-of-type(4) strong, #simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] > div:nth-of-type(4) b {
+    color: #4D4E4D;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+}
+
 /* "Så behandlar vi dina personuppgifter" */
-[module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] {
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] {
     margin-bottom: 1rem !important;
 }
+
+/* checkbox padding */
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] .checkbox {
+    padding: 0 !important;
+}
+
+/* checkbox label */
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] .checkbox label {
+    color: #1D2433;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400 !important;
+    line-height: 125%;
+}
+
+/* checkbox filed empty boxes */
+#simpliform .step-5 [module-uuid="78e55d6e-fb58-478f-af31-358d14bc3d96"] div:empty, #simpliform .step-5 [data-type="CheckboxField"] .label-wrap {
+    display: none !important;
+}
+
+/* checkbox field background */
+#simpliform .step-5 [data-type="CheckboxField"] div {
+    background: none !important;
+}
+
+/* Final success message */
+#simpliform .success-message {
+    background: white;
+    margin-top: 1rem;
+}
+
