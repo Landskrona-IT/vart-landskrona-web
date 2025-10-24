@@ -56,6 +56,7 @@ select {
     background-position: calc(100% - 0.75rem) !important;
     background-repeat: no-repeat !important;
     border-radius: 0.5rem !important;
+    padding-right: 2.5rem !important;
 }
 
 
@@ -173,7 +174,7 @@ select {
   min-height: initial;
   display: flex;
   gap: 1rem;
-    border: 2px dashed var(--Brand-med, #6398AA) !important;
+    border: 2px dashed #6398AA !important;
 }
 
 #simpliform .dropzone .dz-preview {
@@ -240,6 +241,7 @@ body #simpliform #confirmation .checkbox {
   background-color: var(--c-button-primary-color,var(--color-primary));
   width: 100%;
   font-weight: 600 !important;
+  cursor: pointer;
 }
 
 #simpliform .pagination-wrapper .btn-primary:hover,
@@ -603,6 +605,17 @@ body #simpliform #confirmation .checkbox {
 }
 
 /* STEP 2 */
+
+#simpliform .step-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#simpliform .step-2 .alert {
+    grid-row: 2;
+    margin-bottom: 2rem !important;
+    background: #FCE0DE !important;
+}
 
 #simpliform .step-2 [module-uuid="7a8b0885-715e-42e5-bbd5-fad49f9ea3c5"] {
     font-size: 1rem;
