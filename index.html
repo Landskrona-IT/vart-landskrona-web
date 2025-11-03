@@ -14,23 +14,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <script>
-        (() => {
-            const acceptedDomains   = ['lime-forms.com', 'lime-forms.se'];
-            const customer          = new URLSearchParams(location.search).get("customer")?.replace(/[^\w\.\-]/g, "") || "landskrona-kommun.lime-forms.com";
-            const topDomain         = customer.split('.').slice(-2).join('.');
-            const shouldLoadScript  = acceptedDomains.includes(topDomain)
+        (function() {
+            var acceptedDomains = ['lime-forms.com', 'lime-forms.se'];
+            var params = new URLSearchParams(window.location.search);
+            var rawCustomer = params.get('customer');
+
+            var customer = rawCustomer
+                ? rawCustomer.replace(/[^\w.\-]/g, '')
+                : 'landskrona-kommun.lime-forms.com';
+
+            var parts = customer.split('.');
+            var topDomain = parts.slice(-2).join('.');
+            var shouldLoadScript = false;
+
+            for (var i = 0; i < acceptedDomains.length; i++) {
+                if (acceptedDomains[i] === topDomain) {
+                    shouldLoadScript = true;
+                    break;
+                }
+            }
 
             if (!shouldLoadScript) {
-                console.error(`Invalid domain: ${topDomain}. Please use one of the following domains: ${acceptedDomains.join(', ')}.`);
+                console.error(
+                    'Invalid domain: ' + topDomain + '. Please use one of the following domains: ' + acceptedDomains.join(', ') + '.'
+                );
                 return;
-            } else {
-                document.head.appendChild(Object.assign(document.createElement("script"), {
-                    src: `https://${customer}/js/ce/latest`,
-                    type: "text/javascript"
-                }));
             }
+
+            var script = document.createElement('script');
+            script.src = 'https://' + customer + '/js/ce/latest';
+            script.type = 'text/javascript';
+            document.head.appendChild(script);
         })();
     </script>
+
 </head>
 <body>
 <div class="loader"></div>

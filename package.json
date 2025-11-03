@@ -11,6 +11,11 @@
     "webpack-cli": "^6.0.1"
   },
   "devDependencies": {
-    "terser-webpack-plugin": "^5.3.14"
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "core-js": "^3.46.0",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack-dev-server": "^5.2.2"
   }
 }
