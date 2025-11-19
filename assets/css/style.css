@@ -72,16 +72,40 @@ select {
 
 /* Default hiddens */
 .pagination-wrapper {
-  display: block;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.prev-btn-wrapper, .prev-btn {
-  display: none !important;
+.prev-btn-wrapper, .next-btn-wrapper {
+    flex: 1;
+}
+
+
+.prev-btn, lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default {
+    border-radius: 1rem !important;
+    font-size: 1.125rem !important;
+    min-width: calc(var(--base, 8px) * 9);
+    padding: 0.5rem 1.5rem !important;
+    width: 100%;
+    font-weight: 600 !important;
+    cursor: pointer;
+    margin-right: 0px !important;
+}
+
+lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.btn-default:hover {
+    color: inherit !important;
+    background-color: #c7c7c7 !important;
 }
 
 /* Resets */
 #simpliform .p-t-md {
   padding-top: 1rem !important;
+}
+
+#simpliform .m-r-md {
+    margin-right: 0rem !important;
 }
 
 .pagination-wrapper, .progress, #confirmation, .alert-danger {
@@ -92,6 +116,7 @@ select {
 #simpliform .form-group {
   margin-bottom: 1rem !important;
 }
+
 
 #simpliform p {
     font-size: 1rem;
@@ -130,13 +155,14 @@ select {
 }
 
 #simpliform .step-title h3, #simpliform .step h3:first-child {
+    height: 78px !important;
     position: relative;
     left: 50%;
     right: 50%;
     width: 100dvw;
     margin-left: -50dvw;
     margin-right: -50dvw;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding: 1.5rem 1rem;
     font-size: 1.75rem !important;
     font-weight: 650 !important;
@@ -237,7 +263,7 @@ body #simpliform #confirmation .checkbox {
   border-radius: var(--c-button-border-radius,var(--radius-md,var(--base,8px)));
   font-size: 1.125rem !important;
   min-width: calc(var(--base, 8px)*9);
-  padding: 1rem 1.5rem !important;
+  padding: 0.5rem 1.5rem !important;
   background-color: var(--c-button-primary-color,var(--color-primary));
   width: 100%;
   font-weight: 600 !important;
@@ -248,6 +274,7 @@ body #simpliform #confirmation .checkbox {
 #simpliform .btn-success:hover {
   background-color: #134F63 !important;
 }
+
 
 #simpliform .pagination-wrapper .btn-primary svg,
 #simpliform .btn-success svg {
@@ -596,6 +623,10 @@ body #simpliform #confirmation .checkbox {
 
 
 /* STEP 1 */
+
+#simpliform .step-1 .prev-btn-wrapper {
+    display: none !important;
+}
 #simpliform .step-1 select-dynamic-helpdesktype-field label {
     display: none !important;
 }
@@ -621,6 +652,10 @@ body #simpliform #confirmation .checkbox {
     font-size: 1rem;
     font-weight: 700 !important;
     color: #4D4E4D;
+}
+
+#simpliform .step-2 #minimapbody {
+    height: 400px !important;
 }
 
 /* STEP 4 */
