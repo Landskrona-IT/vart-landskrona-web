@@ -84,7 +84,7 @@ select {
 
 
 .prev-btn, lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default {
-    border-radius: 1rem !important;
+    border-radius: 0.75rem !important;
     font-size: 1.125rem !important;
     min-width: calc(var(--base, 8px) * 9);
     padding: 0.5rem 1.5rem !important;
@@ -251,7 +251,7 @@ body #simpliform #confirmation .checkbox {
 
 #simpliform .btn-primary, .btn-success {
     background: #0e5873 !important;
-    border-radius: 1rem !important;
+    border-radius: 0.75rem !important;
     width: 100% !important;
     color: white !important;
     font-size: 1.125rem !important;
