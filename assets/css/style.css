@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Mona Sans';
     font-style: normal;
@@ -17,22 +16,24 @@
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #F4F0E9;
-  font-family: 'Mona Sans', sans-serif !important;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F0E9;
+    font-family: 'Mona Sans', sans-serif !important;
 }
 
 body.is-app .hidden-app {
-  display: none !important;
+    display: none !important;
 }
 
 body.is-app #app {
-  padding-top: 0px;
+    padding-top: 0px;
 }
 
 #app {
-  padding: 3.5rem 1rem 1.5rem 1rem; /* 56px for top bar */
+    overflow-x: hidden;
+    padding: 3.5rem 1rem 1.5rem 1rem; /* 56px for top bar */
 }
 
 p, strong, b, small, select {
@@ -63,11 +64,11 @@ select {
 /* Devtools */
 .step,
 .step > * {
-  /*display: block !important;*/
+    /*display: block !important;*/
 }
 
 .step {
-  animation: step-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: step-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 /* Default hiddens */
@@ -101,20 +102,17 @@ lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.b
 
 /* Resets */
 #simpliform .p-t-md {
-  padding-top: 1rem !important;
+    padding-top: 1rem !important;
 }
 
-#simpliform .m-r-md {
-    margin-right: 0rem !important;
-}
 
 .pagination-wrapper, .progress, #confirmation, .alert-danger {
-  margin-left: 0;
-  margin-right: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 #simpliform .form-group {
-  margin-bottom: 1rem !important;
+    margin-bottom: 1rem !important;
 }
 
 
@@ -142,16 +140,16 @@ lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.b
 #simpliform h4,
 #simpliform h5,
 #simpliform h6 {
-  font-family: 'Mona Sans', sans-serif !important;
-  font-weight: 650 !important;
-  margin-top: 0 !important;
-  font-variation-settings: "wdth" 86 !important;
+    font-family: 'Mona Sans', sans-serif !important;
+    font-weight: 650 !important;
+    margin-top: 0 !important;
+    font-variation-settings: "wdth" 86 !important;
 }
 
 #simpliform #confirmation h1.h4 {
-  color: #004E68 !important;
-  font-size: 28px !important;
-   margin-bottom: 1.5rem !important;
+    color: #004E68 !important;
+    font-size: 28px !important;
+    margin-bottom: 1.5rem !important;
 }
 
 #simpliform .step-title h3, #simpliform .step h3:first-child {
@@ -174,17 +172,18 @@ lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.b
 /* Dropzones */
 #simpliform .dropzone,
 #simpliform .form-control {
-  box-shadow: none;
-  border-radius: 0.5rem !important;
-   border: 1px solid #E1E6EF !important;
+    box-shadow: none;
+    border-radius: 0.5rem !important;
+    border: 1px solid #E1E6EF !important;
     color: #4D4E4D !important;
     letter-spacing: .025rem !important;
 }
+
 #simpliform .form-control::placeholder {
     color: #8C8C8C !important;
 }
 
-#simpliform input.form-control  {
+#simpliform input.form-control {
     height: 2.75rem !important;
 }
 
@@ -197,21 +196,21 @@ lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.b
 }
 
 #simpliform .dropzone {
-  min-height: initial;
-  display: flex;
-  gap: 1rem;
+    min-height: initial;
+    display: flex;
+    gap: 1rem;
     border: 2px dashed #6398AA !important;
 }
 
 #simpliform .dropzone .dz-preview {
-  display: grid;
-  gap: 12px;
+    display: grid;
+    gap: 12px;
 }
 
 #simpliform .dropzone .dz-preview .dz-image {
-  border-radius: 4px !important;
-  background: #fff !important;
-  box-shadow: 0px 0.7px 5.3px rgba(0, 0, 0, 0.028), 0px 2.2px 17.9px rgba(0, 0, 0, 0.042), 0px 10px 80px rgba(0, 0, 0, 0.07);
+    border-radius: 4px !important;
+    background: #fff !important;
+    box-shadow: 0px 0.7px 5.3px rgba(0, 0, 0, 0.028), 0px 2.2px 17.9px rgba(0, 0, 0, 0.042), 0px 10px 80px rgba(0, 0, 0, 0.07);
 }
 
 #simpliform .dropzone .dz-message {
@@ -229,21 +228,21 @@ lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.b
 /* Panel */
 #simpliform .panel .panel-body,
 #simpliform .panel .panel-heading {
-  padding: 0;
+    padding: 0;
 }
 
 #simpliform .panel,
 body #simpliform #confirmation .checkbox {
-  background: #fff;
-  box-shadow:
-  0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
-  0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-  0px 10px 80px rgba(0, 0, 0, 0.07);
-  padding: 24px;
-  border-radius: 4px;
-  border: none;
-  margin-bottom: 2rem;
+    background: #fff;
+    box-shadow: 0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
+    0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
+    0px 10px 80px rgba(0, 0, 0, 0.07);
+    padding: 24px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 2rem;
 }
+
 #simpliform .next-btn-wrapper {
     width: 100% !important;
     margin: 0 auto !important;
@@ -256,40 +255,41 @@ body #simpliform #confirmation .checkbox {
     color: white !important;
     font-size: 1.125rem !important;
     font-weight: 500 !important;
- }
+}
 
 #simpliform .pagination-wrapper .btn-primary,
 #simpliform .btn-success {
-  border-radius: var(--c-button-border-radius,var(--radius-md,var(--base,8px)));
-  font-size: 1.125rem !important;
-  min-width: calc(var(--base, 8px)*9);
-  padding: 0.5rem 1.5rem !important;
-  background-color: var(--c-button-primary-color,var(--color-primary));
-  width: 100%;
-  font-weight: 600 !important;
-  cursor: pointer;
+    border-radius: var(--c-button-border-radius, var(--radius-md, var(--base, 8px)));
+    font-size: 1.125rem !important;
+    min-width: calc(var(--base, 8px) * 9);
+    padding: 0.5rem 1.5rem !important;
+    background-color: var(--c-button-primary-color, var(--color-primary));
+    width: 100%;
+    font-weight: 600 !important;
+    cursor: pointer;
 }
 
 #simpliform .pagination-wrapper .btn-primary:hover,
 #simpliform .btn-success:hover {
-  background-color: #134F63 !important;
+    background-color: #134F63 !important;
 }
 
 
 #simpliform .pagination-wrapper .btn-primary svg,
 #simpliform .btn-success svg {
-  display: none;
+    display: none;
 }
 
 /* Description textarea */
 #simpliform textarea.form-control {
-   min-height: 120px;
+    min-height: 120px;
     color: #4D4E4D;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: 125%;
 }
+
 #simpliform textarea::placeholder {
     color: #8C8C8C;
 }
@@ -303,27 +303,28 @@ body #simpliform #confirmation .checkbox {
 
 /* Location step */
 #viewDiv {
-  margin-bottom: 1rem !important;
-  height: 500px !important;
+    margin-bottom: 1rem !important;
+    height: 500px !important;
 }
 
 #simpliform .field-map {
-  padding: 0;
+    padding: 0;
 }
 
 /* Icons */
 #simpliform .fa-icon {
-  display: none !important;
+    display: none !important;
 }
+
 #simpliform .fa-icon + b {
-  margin-left: -1ch;
+    margin-left: -1ch;
 }
 
 /* Simpliforms alerts */
 #simpliform a,
 #simpliform a:active,
 #simpliform a:visited {
-  color: #134F63 !important;
+    color: #134F63 !important;
     font-weight: 550 !important;
     font-size: 1rem !important;
     text-decoration: none !important;
@@ -337,17 +338,17 @@ body #simpliform #confirmation .checkbox {
 }
 
 #simpliform .alert {
-  padding: calc(var(--base, 8px)*2) calc(var(--base, 8px)*3);
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: 4px;
-  border: none;
+    padding: calc(var(--base, 8px) * 2) calc(var(--base, 8px) * 3);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 4px;
+    border: none;
 }
 
 #simpliform .alert ul {
-  padding-left: 1.2em;
+    padding-left: 1.2em;
 }
 
 #simpliform .alert.alert-info {
@@ -380,74 +381,74 @@ body #simpliform #confirmation .checkbox {
 }
 
 #simpliform .alert.alert-danger a.alert-link {
-  color: #134F63;
+    color: #134F63;
 }
 
 #simpliform .alert b {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 #simpliform .alert {
-  line-height: 1.5em;
+    line-height: 1.5em;
 }
-#simpliform .alert>p+p {
-  margin-top: 0;
+
+#simpliform .alert > p + p {
+    margin-top: 0;
 }
 
 #simpliform .alert .h5.no-m-t {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 #simpliform .alert .h5.no-m-t + ul:empty {
-  display: none;
+    display: none;
 }
 
 #simpliform .alert a,
 #simpliform .alert a:hover,
 #simpliform .alert a:active,
 #simpliform .alert a:visited {
-  color: inherit;
-  text-decoration: underline;
-  font-weight: normal;
+    color: inherit;
+    text-decoration: underline;
+    font-weight: normal;
 }
 
 /* Success message */
-#simpliform  .success-message {
-  padding: calc(var(--base, 8px)*2) calc(var(--base, 8px)*3);
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: 4px;
-  border: none;
-  box-shadow:
-  0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
-  0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-  0px 10px 80px rgba(0, 0, 0, 0.07);
-  background-color: #3d3d3d;
-  color: #fff;
+#simpliform .success-message {
+    padding: calc(var(--base, 8px) * 2) calc(var(--base, 8px) * 3);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
+    0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
+    0px 10px 80px rgba(0, 0, 0, 0.07);
+    background-color: #3d3d3d;
+    color: #fff;
 }
 
 #simpliform .success-message .text-center {
-  text-align: left;
+    text-align: left;
 }
 
 #simpliform .success-message a,
 #simpliform .success-message a:hover,
 #simpliform .success-message a:active,
 #simpliform .success-message a:visited {
-  color: inherit;
-  text-decoration: underline;
-  font-weight: normal;
+    color: inherit;
+    text-decoration: underline;
+    font-weight: normal;
 }
 
 #simpliform .alert-danger a,
 #simpliform .alert-danger a:hover,
 #simpliform .alert-danger a:active,
 #simpliform .alert-danger a:visited {
-  color: inherit;
-  text-decoration: underline;
-  font-weight: normal;
+    color: inherit;
+    text-decoration: underline;
+    font-weight: normal;
 }
 
 /* Column reset */
@@ -499,126 +500,125 @@ body #simpliform #confirmation .checkbox {
 #simpliform .col-xs-7,
 #simpliform .col-xs-8,
 #simpliform .col-xs-9 {
-  padding-left: 0;
-  padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #simpliform .row {
-  margin-left: 0;
-  margin-right: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 /* Header grid */
 #header {
-  display: grid;
-  gap: 1rem;
+    display: grid;
+    gap: 1rem;
 }
 
 /* Get the app banner */
 #app-banner {
-  background-color: #3d3d3d;
-  color: #fff;
-  filter: var(--drop-shadow-5,drop-shadow(0 calc(12px*var(--drop-shadow-amount, 1)) calc(14px*var(--drop-shadow-amount, 1)) var(--drop-shadow-color,rgba(0,0,0,.3))));
-  padding: calc(var(--base, 8px)*2) calc(var(--base, 8px)*3);
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 4px;
-  box-shadow:
-  0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
-  0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-  0px 10px 80px rgba(0, 0, 0, 0.07);
-  margin-bottom: 2rem;
+    background-color: #3d3d3d;
+    color: #fff;
+    filter: var(--drop-shadow-5, drop-shadow(0 calc(12px * var(--drop-shadow-amount, 1)) calc(14px * var(--drop-shadow-amount, 1)) var(--drop-shadow-color, rgba(0, 0, 0, .3))));
+    padding: calc(var(--base, 8px) * 2) calc(var(--base, 8px) * 3);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 4px;
+    box-shadow: 0px 0.7px 5.3px rgba(0, 0, 0, 0.028),
+    0px 2.2px 17.9px rgba(0, 0, 0, 0.042),
+    0px 10px 80px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
 }
 
 #app-banner .c-button {
-  display: inline-flex;
-  text-decoration: none;
-  border: 1px solid;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 4px 12px;
-  font-weight: bold;
-  border-radius: 2px;
-  font-size: .9em;
-  transition: background-color 100ms;
+    display: inline-flex;
+    text-decoration: none;
+    border: 1px solid;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 4px 12px;
+    font-weight: bold;
+    border-radius: 2px;
+    font-size: .9em;
+    transition: background-color 100ms;
 }
 
 #app-banner .c-button:hover {
-  background-color: rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, .2);
 }
 
 /* Toolbar */
 #toolbar {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 999;
-  border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    border-bottom: 1px solid #eee;
 }
 
 #toolbar .c-button,
 #toolbar .c-button:active,
 #toolbar .c-button:focus,
 #toolbar .c-button:hover {
-  margin-bottom: -3px;
-  text-decoration: none;
-  color: #000;
-  animation: option-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    margin-bottom: -3px;
+    text-decoration: none;
+    color: #000;
+    animation: option-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 #toolbar .c-button:after {
-  content: "";
-  display: block;
-  height: 3px;
-  background-color: #134F63;
-  width: 0%;
-  margin-left: auto;
-  margin-right: auto;
-  transition: width 100ms;
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #134F63;
+    width: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: width 100ms;
 }
 
 #toolbar .c-button:hover:after {
-  width: 100%;
+    width: 100%;
 }
 
 #toolbar .c-button .c-button__label {
-  display: flex;
-  align-items: center;
-  line-height: 14px;
-  gap: 6px;
+    display: flex;
+    align-items: center;
+    line-height: 14px;
+    gap: 6px;
 }
 
 /* Utilities */
 .u-display--none {
-  display: none !important;
+    display: none !important;
 }
 
 /* Icons */
 .c-icon {
-  width: 22px;
-  height: 22px;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .c-icon.c-icon--back {
-  background-image: url(../icons/back.svg);
+    background-image: url(../icons/back.svg);
 }
 
 .c-icon.c-icon--close {
-  background-image: url(../icons/close.svg);
+    background-image: url(../icons/close.svg);
 }
 
 
@@ -632,6 +632,7 @@ body #simpliform #confirmation .checkbox {
 #simpliform .step-1 .prev-btn-wrapper {
     display: none !important;
 }
+
 #simpliform .step-1 select-dynamic-helpdesktype-field label {
     display: none !important;
 }
