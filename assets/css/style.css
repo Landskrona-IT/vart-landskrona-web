@@ -622,11 +622,6 @@ body #simpliform #confirmation .checkbox {
 }
 
 
-/* validation dialog hide; (there is feedback under every field, so it's kinda redundant) */
-#simpliform .alert-danger.validation-messages {
-    display: none !important;
-}
-
 /* STEP 1 */
 
 #simpliform .step-1 .prev-btn-wrapper {
