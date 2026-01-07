@@ -15,7 +15,7 @@ class FormNavigationManager {
     FormNavigationButtons.setupCancelAndCloseButtons();
 
     formsApi.onReady(function() {
-      formsApi.setFieldValue('source', 'app'); // Set appropriate source so that app input is easily identified in Lime.
+      formsApi.setFieldValue('forms_source', 'app'); // Set appropriate source so that app input is easily identified in Lime.
       setTimeout(function() {
         document.querySelector(".loader").remove();
       }, 1000);
