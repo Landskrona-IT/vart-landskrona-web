@@ -200,6 +200,8 @@ class FormNavigationButtons {
 
 
 
+const SOURCE_FIELD = 'forms_source';
+const SOURCE_VALUE = 'app';
 class FormNavigationManager {
   static initialize() {
     const formsApi = window.limeForms.getApi();
@@ -208,9 +210,56 @@ class FormNavigationManager {
     StepChange.setupStepChange(formsApi);
     Submitted.setupSubmitted(formsApi);
     CloseCancelButton.setupCancelAndCloseButtons();
-    formsApi.onReady(function () {
-      setTimeout(function () {
-        document.querySelector(".loader").remove();
+    formsApi.onReady(() => {
+      var _document$getElementB;
+      const ensureSourceIsApp = () => {
+        let updated = false;
+
+        // API method
+        if (typeof formsApi.setFieldValue === 'function') {
+          const current = typeof formsApi.getFieldValue === 'function' ? formsApi.getFieldValue(SOURCE_FIELD) : null;
+          if (current !== SOURCE_VALUE) {
+            // Lets set both indexed + non-indexed fields since lime could is bork.
+            formsApi.setFieldValue(`${SOURCE_FIELD}@1`, SOURCE_VALUE);
+            formsApi.setFieldValue(SOURCE_FIELD, SOURCE_VALUE);
+            updated = true;
+          }
+        }
+
+        // DOM method (fallback)
+        const input = document.querySelector(`input[data-name="${SOURCE_FIELD}"]`);
+        if (input && input.value !== SOURCE_VALUE) {
+          input.value = SOURCE_VALUE;
+          input.dispatchEvent(new Event('input', {
+            bubbles: true
+          }));
+          input.dispatchEvent(new Event('change', {
+            bubbles: true
+          }));
+          updated = true;
+        }
+        return updated;
+      };
+      ensureSourceIsApp();
+
+      // Observe DOM additions only (field re-created by Lime)
+      const observer = new MutationObserver(() => {
+        ensureSourceIsApp();
+      });
+      observer.observe((_document$getElementB = document.getElementById('app')) !== null && _document$getElementB !== void 0 ? _document$getElementB : document.body, {
+        childList: true,
+        subtree: true
+      });
+
+      // Retry window to fight Lime initialization overrides
+      const retryInterval = setInterval(ensureSourceIsApp, 500);
+      setTimeout(() => clearInterval(retryInterval), 5000);
+
+      // Re-apply on step changes.
+      formsApi.onStepChange((from, to) => ensureSourceIsApp(from, to));
+      setTimeout(() => {
+        var _document$querySelect;
+        (_document$querySelect = document.querySelector('.loader')) === null || _document$querySelect === void 0 || _document$querySelect.remove();
       }, 1000);
     });
   }
@@ -230,6 +279,7 @@ class AppForm {
       console.error("Error: Could not find form template.");
     }
     const appElement = document.getElementById('app');
+    console.log('[INFO] finding app element...', appElement);
     if (appElement) {
       appElement.appendChild(clone);
       js_FormNavigationManager.initialize();
@@ -249,7 +299,7 @@ window.addEventListener('load', function () {
     const interval = setInterval(function () {
       if (window.limeForms && typeof window.limeForms.getApi === 'function') {
         clearInterval(interval);
-        console.log('[INFO] limeForms loaded, initializing app form...');
+        console.log('[INFO] limeforms loaded, initializing app form...');
         js_AppForm.initialize();
       } else {
         attempts++;

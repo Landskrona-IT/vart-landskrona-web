@@ -18,6 +18,9 @@ class AppForm {
       }
 
       const appElement = document.getElementById('app');
+
+      console.log('[INFO] finding app element...', appElement);
+
       if (appElement) {
         appElement.appendChild(clone);
 

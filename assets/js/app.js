@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
         const interval = setInterval(function() {
             if (window.limeForms && typeof window.limeForms.getApi === 'function') {
                 clearInterval(interval);
-                console.log('[INFO] limeForms loaded, initializing app form...');
+                console.log('[INFO] limeforms loaded, initializing app form...');
                 AppForm.initialize();
             } else {
                 attempts++;
