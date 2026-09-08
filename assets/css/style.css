@@ -32,6 +32,7 @@ body.is-app #app {
 }
 
 #app {
+    max-width: 100vw;
     overflow-x: hidden;
     padding: 3.5rem 1rem 1.5rem 1rem; /* 56px for top bar */
 }
@@ -155,11 +156,14 @@ lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.b
 #simpliform .step-title h3, #simpliform .step h3:first-child {
     height: 78px !important;
     position: relative;
-    left: 50%;
-    right: 50%;
-    width: 100dvw;
-    margin-left: -50dvw;
-    margin-right: -50dvw;
+    /* Use the app's known horizontal gutters instead of dynamic viewport units.
+       iOS WebViews can resolve 100dvw against a stale visual viewport while
+       Lime replaces a step, leaving the page horizontally offset. */
+    left: auto;
+    right: auto;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
     margin-bottom: 1rem;
     padding: 1.5rem 1rem;
     font-size: 1.75rem !important;
@@ -500,13 +504,16 @@ body #simpliform #confirmation .checkbox {
 #simpliform .col-xs-7,
 #simpliform .col-xs-8,
 #simpliform .col-xs-9 {
-    padding-left: 0;
-    padding-right: 0;
+    /* Lime can inject its Bootstrap grid stylesheet after this file. Without
+       important, its 15px gutters shift a dynamically recreated step left. */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 #simpliform .row {
-    margin-left: 0;
-    margin-right: 0;
+    /* Counter Lime's default -15px Bootstrap row margins on every step. */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 /* Header grid */
@@ -621,6 +628,17 @@ body #simpliform #confirmation .checkbox {
     background-image: url(../icons/close.svg);
 }
 
+/* Lime renders each step below .steps, not directly below #simpliform. Keep
+   the final step's transient width from shifting the WebView sideways. */
+#simpliform .steps > .step.step-5 {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 
 /* STEP 1 */
 
@@ -633,7 +651,7 @@ body #simpliform #confirmation .checkbox {
 }
 
 #simpliform .step-1 .alert.alert-info:first-child {
-    background: #D9F0F4 !important;
+    background: red !important;
 }
 
 /* STEP 2 */
@@ -735,4 +753,3 @@ body #simpliform #confirmation .checkbox {
     background: white;
     margin-top: 1rem;
 }
-

@@ -84,12 +84,35 @@ class AppBanner {
 /* harmony default export */ const js_AppBanner = (AppBanner);
 ;// CONCATENATED MODULE: ./assets/js/Navigation/Scroll.js
 class FormNavigationScroll {
+  static resetScrollPosition() {
+    const reset = () => {
+      // iOS WebView can retain a horizontal offset while Lime replaces a step.
+      // Reset every possible scrolling element, not only window.scrollTo().
+      window.scrollTo(0, 0);
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+      const app = document.getElementById('app');
+      if (app) {
+        app.scrollLeft = 0;
+      }
+    };
+    reset();
+
+    // Lime mutates the DOM after onStepChange. Reapply after layout has settled
+    // so a late focus/layout pass cannot restore the iOS horizontal offset.
+    window.requestAnimationFrame(() => {
+      reset();
+      window.requestAnimationFrame(reset);
+    });
+    window.setTimeout(reset, 100);
+    window.setTimeout(reset, 300);
+  }
   static setupScroll(formsApi) {
     formsApi.onReady(() => {
-      window.scrollTo(0, 0);
+      FormNavigationScroll.resetScrollPosition();
     });
     formsApi.onStepChange((from, to) => {
-      window.scrollTo(0, 0);
+      FormNavigationScroll.resetScrollPosition();
     });
   }
 }
@@ -220,7 +243,6 @@ class FormNavigationManager {
           const current = typeof formsApi.getFieldValue === 'function' ? formsApi.getFieldValue(SOURCE_FIELD) : null;
           if (current !== SOURCE_VALUE) {
             // Lets set both indexed + non-indexed fields since lime could is bork.
-            formsApi.setFieldValue(`${SOURCE_FIELD}@1`, SOURCE_VALUE);
             formsApi.setFieldValue(SOURCE_FIELD, SOURCE_VALUE);
             updated = true;
           }
