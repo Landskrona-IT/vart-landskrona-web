@@ -4,7 +4,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "watch": "webpack --watch --mode=development"
+    "dev": "docker compose -f docker-compose.dev.yml up --build"
   },
   "dependencies": {
     "webpack": "5.94.0",

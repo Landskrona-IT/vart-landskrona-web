@@ -32,12 +32,24 @@ module.exports = {
     devServer: {
         static: {
             directory: path.join(__dirname),
+            watch: {
+                usePolling: true,
+                interval: 500,
+            },
         },
         compress: true,
-        port: 8080,
+        port: 8081,
         allowedHosts: 'all',
         host: '0.0.0.0',
-        hot: true,
+        hot: false,
+        liveReload: true,
+        watchFiles: {
+            paths: ['assets/css/**/*.css', 'index.html'],
+            options: {
+                usePolling: true,
+                interval: 500,
+            },
+        },
     },
     optimization: {
         minimize: false,
