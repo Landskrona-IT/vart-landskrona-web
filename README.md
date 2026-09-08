@@ -10,7 +10,7 @@ This repository contains a webpage with a pre-designed form that is intended to 
 Run the development service:
 
 ```bash
-docker compose -f docker-compose.dev.yml up --watch --build
+npm run dev
 ```
 
 Visit http://localhost:8080. Docker Compose Watch syncs CSS, HTML, and JavaScript

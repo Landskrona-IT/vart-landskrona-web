@@ -156,14 +156,11 @@ lime-form[form-id="DI6su97z1SAALJXZBxYA"] #simpliform .btn-default.btn-default.b
 #simpliform .step-title h3, #simpliform .step h3:first-child {
     height: 78px !important;
     position: relative;
-    /* Use the app's known horizontal gutters instead of dynamic viewport units.
-       iOS WebViews can resolve 100dvw against a stale visual viewport while
-       Lime replaces a step, leaving the page horizontally offset. */
-    left: auto;
-    right: auto;
-    width: calc(100% + 2rem);
-    margin-left: -1rem;
-    margin-right: -1rem;
+    left: 50%;
+    right: 50%;
+    width: 100dvw;
+    margin-left: -50dvw;
+    margin-right: -50dvw;
     margin-bottom: 1rem;
     padding: 1.5rem 1rem;
     font-size: 1.75rem !important;
@@ -651,7 +648,7 @@ body #simpliform #confirmation .checkbox {
 }
 
 #simpliform .step-1 .alert.alert-info:first-child {
-    background: red !important;
+    background: #D9F0F4 !important;
 }
 
 /* STEP 2 */
