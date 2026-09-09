@@ -228,7 +228,7 @@ const SOURCE_VALUE = 'app';
 class FormNavigationManager {
   static initialize() {
     const formsApi = window.limeForms.getApi();
-    Scroll.setupScroll(formsApi);
+    Scroll.setupScroll(formsApi)
     BackButton.setupBackButton(formsApi);
     StepChange.setupStepChange(formsApi);
     Submitted.setupSubmitted(formsApi);
