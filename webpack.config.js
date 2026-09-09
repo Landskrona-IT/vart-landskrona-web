@@ -1,5 +1,6 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -54,4 +55,9 @@ module.exports = {
     optimization: {
         minimize: false,
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            __BUILD_ID__: JSON.stringify(process.env.BUILD_ID || 'local'),
+        }),
+    ],
 };

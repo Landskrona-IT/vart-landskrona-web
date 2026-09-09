@@ -136,6 +136,11 @@ class FormNavigationBackButton {
 class FormNavigationStepChange {
   static setupStepChange(formsApi) {
     formsApi.onStepChange((from, to) => {
+      window.dispatchEvent(new CustomEvent('lime-form-step-change', {
+        detail: {
+          index: to.index
+        }
+      }));
       const backButton = document.getElementById("back-button");
       if (backButton) {
         if (to.index === 0 || formsApi.steps.length === to.index) {
@@ -217,7 +222,28 @@ class FormNavigationButtons {
   }
 }
 /* harmony default export */ const CloseCancelButton = (FormNavigationButtons);
+;// CONCATENATED MODULE: ./assets/js/LayoutRefresh.js
+const REFLOW_DELAYS = [0, 100, 300, 750, 1500];
+
+/**
+ * WKWebView can report its final width shortly after the page and Lime form
+ * have mounted. Re-dispatching resize after those points lets Lime recalculate
+ * any dimensions captured during its initial render.
+ */
+function scheduleLayoutRefresh() {
+  REFLOW_DELAYS.forEach(delay => {
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        // Reading the width makes the browser flush pending style/layout work
+        // before third-party resize listeners run.
+        void document.documentElement.clientWidth;
+        window.dispatchEvent(new Event('resize'));
+      });
+    }, delay);
+  });
+}
 ;// CONCATENATED MODULE: ./assets/js/FormNavigationManager.js
+
 
 
 
@@ -228,13 +254,15 @@ const SOURCE_VALUE = 'app';
 class FormNavigationManager {
   static initialize() {
     const formsApi = window.limeForms.getApi();
-    Scroll.setupScroll(formsApi)
+    Scroll.setupScroll(formsApi);
     BackButton.setupBackButton(formsApi);
     StepChange.setupStepChange(formsApi);
     Submitted.setupSubmitted(formsApi);
     CloseCancelButton.setupCancelAndCloseButtons();
     formsApi.onReady(() => {
       var _document$getElementB;
+      // Re-run the bounded refresh once Lime has finished rendering its form.
+      scheduleLayoutRefresh();
       const ensureSourceIsApp = () => {
         let updated = false;
 
@@ -290,6 +318,7 @@ class FormNavigationManager {
 ;// CONCATENATED MODULE: ./assets/js/AppForm.js
 
 
+
 class AppForm {
   static initialize() {
     const template = document.getElementById('lime-form-template');
@@ -304,6 +333,10 @@ class AppForm {
     console.log('[INFO] finding app element...', appElement);
     if (appElement) {
       appElement.appendChild(clone);
+
+      // Lime mounts asynchronously. iOS WKWebView may only know its final
+      // width after the screen transition has completed.
+      scheduleLayoutRefresh();
       js_FormNavigationManager.initialize();
     } else {
       console.error("Error: Could not find app container.");
@@ -314,7 +347,34 @@ class AppForm {
 ;// CONCATENATED MODULE: ./assets/js/app.js
 
 
+
+function addReleaseBadge() {
+  if (!js_MobileAppManager.isApp()) {
+    return;
+  }
+  const badge = document.createElement('span');
+  badge.className = 'web-release-badge';
+  badge.textContent = `build ${"94dccfe-20260909134454"}`;
+  badge.setAttribute('aria-hidden', 'true');
+  const revealTarget = document.createElement('button');
+  revealTarget.className = 'web-release-badge-target';
+  revealTarget.type = 'button';
+  revealTarget.tabIndex = -1;
+  revealTarget.setAttribute('aria-hidden', 'true');
+  revealTarget.addEventListener('click', () => {
+    badge.classList.toggle('is-visible');
+  });
+  window.addEventListener('lime-form-step-change', event => {
+    var _event$detail;
+    const isFirstStep = ((_event$detail = event.detail) === null || _event$detail === void 0 ? void 0 : _event$detail.index) === 0;
+    revealTarget.hidden = !isFirstStep;
+    badge.classList.remove('is-visible');
+  });
+  document.body.appendChild(badge);
+  document.body.appendChild(revealTarget);
+}
 js_AppBanner.initialize();
+window.addEventListener('DOMContentLoaded', addReleaseBadge);
 window.addEventListener('load', function () {
   function waitForLimeForms(maxAttempts) {
     let attempts = 0;

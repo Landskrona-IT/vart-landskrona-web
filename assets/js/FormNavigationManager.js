@@ -3,6 +3,7 @@ import FormNavigationBackButton from './Navigation/BackButton';
 import FormNavigationStepChange from './Navigation/StepChange';
 import FormNavigationSubmitted from './Navigation/Submitted';
 import FormNavigationButtons from './Navigation/CloseCancelButton';
+import { scheduleLayoutRefresh } from './LayoutRefresh';
 
 const SOURCE_FIELD = 'forms_source';
 const SOURCE_VALUE = 'app';
@@ -18,6 +19,9 @@ class FormNavigationManager {
     FormNavigationButtons.setupCancelAndCloseButtons();
 
     formsApi.onReady(() => {
+
+      // Re-run the bounded refresh once Lime has finished rendering its form.
+      scheduleLayoutRefresh();
 
       const ensureSourceIsApp = () => {
         let updated = false;

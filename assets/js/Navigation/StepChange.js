@@ -1,6 +1,10 @@
 class FormNavigationStepChange {
   static setupStepChange(formsApi) {
     formsApi.onStepChange((from, to) => {
+      window.dispatchEvent(new CustomEvent('lime-form-step-change', {
+        detail: { index: to.index },
+      }));
+
       const backButton = document.getElementById("back-button");
       if (backButton) {
         if (to.index === 0 || formsApi.steps.length === to.index) {

@@ -1,5 +1,6 @@
 import MobileAppManager from './MobileAppManager';
 import FormNavigationManager from './FormNavigationManager';
+import { scheduleLayoutRefresh } from './LayoutRefresh';
 
 class AppForm {
 
@@ -24,6 +25,9 @@ class AppForm {
       if (appElement) {
         appElement.appendChild(clone);
 
+        // Lime mounts asynchronously. iOS WKWebView may only know its final
+        // width after the screen transition has completed.
+        scheduleLayoutRefresh();
         FormNavigationManager.initialize();
       } else {
         console.error("Error: Could not find app container.");

@@ -54,7 +54,9 @@ scw --profile landskrona init
 ### Build, push, and deploy
 
 Build the Webpack bundle before building the image. The `Dockerfile` serves the
-already-built `dist/app.js` with nginx.
+already-built `dist/app.js` with nginx. Each production build includes a unique
+release ID, shown discreetly at the bottom-right when the page is opened in the
+mobile app; include it in screenshots when reporting an issue.
 
 ```bash
 npm install

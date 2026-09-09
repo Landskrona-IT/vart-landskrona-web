@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/app.js",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "BUILD_ID=\"$(git rev-parse --short HEAD)-$(date +%Y%m%d%H%M%S)\" webpack --mode=production",
     "dev": "docker compose -f docker-compose.dev.yml up --watch --build",
     "dev:server": "webpack serve --mode=development --port 8081"
   },
