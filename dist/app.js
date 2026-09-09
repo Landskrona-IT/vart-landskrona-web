@@ -354,7 +354,7 @@ function addReleaseBadge() {
   }
   const badge = document.createElement('span');
   badge.className = 'web-release-badge';
-  badge.textContent = `build ${"94dccfe-20260909134454"}`;
+  badge.textContent = `build ${"66de26d-20260909134806"}`;
   badge.setAttribute('aria-hidden', 'true');
   const revealTarget = document.createElement('button');
   revealTarget.className = 'web-release-badge-target';
